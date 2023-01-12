@@ -1,0 +1,23 @@
+<%- include('./partials/header') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Investments</h1>
+
+    <% investments.forEach(function(i) { %>
+      <ul>
+          <li>
+            <a href="/investments/<%= i.id %>"><%= i.investment %></a>
+            <%= i.investment %>
+              - 
+            <%= i.done ? 'done' : 'not done' %>
+          </li>
+        <% }); %>
+      </ul>
+    <%- include('./partials/header') %>
+  </body>
+</html>
