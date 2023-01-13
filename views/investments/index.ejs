@@ -1,23 +1,18 @@
-<%- include('./partials/header') %>
-<!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Investments</h1>
+<%- include('../partials/header') %> 
 
-    <% investments.forEach(function(i) { %>
+    <h1>Investments</h1>
+    
       <ul>
+        <% investments.forEach(function(i) { %>
           <li>
-            <a href="/investments/<%= i.id %>"><%= i.investment %></a>
-            <%= i.investment %>
+            <a href="/investments/<%= i.id %>">
+              <%= i.investment %>
+            </a>
+           
               - 
             <%= i.done ? 'done' : 'not done' %>
           </li>
         <% }); %>
-      </ul>
-    <%- include('./partials/header') %>
-  </body>
-</html>
+      </ul> 
+<%- include('../partials/footer') %>
+        
