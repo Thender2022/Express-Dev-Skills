@@ -1,10 +1,15 @@
 <%- include('../partials/header') %> 
 
-  <h3>Investments as of <%= time %></h3>
+  <h3 class="time">Investments as of <%= time %></h3>
     
       <ul>
+      <a class="new" href="/Investments/new">Add Investment</a>
         <% investments.forEach(function(i) { %>
           <li>
+            <form action="/investments/<%= i.id %>?_method=DELETE"
+              class="delete-form" method="POST">
+              <button type="submit">X</button>
+            </form>
             <a href="/investments/<%= i.id %>">
               <%= i.investment %>
             </a>
